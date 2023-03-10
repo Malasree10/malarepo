@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="74799c64-e8f5-4a21-8e4b-91487badaec6" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="akhil-ye-no1Flow" doc:id="fbbb2f00-9091-49ce-b924-075d0cbac6cd" >
+		<http:listener doc:name="Listener" doc:id="bda0e40a-ab85-47f4-9365-eb605af3c4aa" config-ref="HTTP_Listener_config" path="/ayyagaru"/>
+		<set-payload value="ayyagareNo 1" doc:name="Set Payload" doc:id="465bb9d6-bd07-4ee9-be3f-d3b875f49ff5" />
+		<logger level="INFO" doc:name="Logger" doc:id="637aa7b0-0caf-4289-9353-8ba135fbb4ed" />
+	</flow>
+</mule>
